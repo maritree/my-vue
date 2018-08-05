@@ -7,10 +7,10 @@
             <el-header>
          <Header></Header>
             </el-header>
-            <el-main>
+            <el-main style="padding: 5px">
                 <router-view></router-view>
             </el-main>
-            <el-footer>Footer</el-footer>
+            <el-footer style="height: 30px">Footer</el-footer>
         </el-container>
     </el-container>
 </template>
@@ -25,12 +25,19 @@ export default {
 </script>
 
 <style scoped>
-.el-header,
+.el-header
+{
+    padding: 0px;
+    background-color: #b3c0d1;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+}
 .el-footer {
   padding: 0px;
   background-color: #b3c0d1;
   color: #333;
   text-align: center;
-  line-height: 60px;
+  line-height: 30px;
 }
 </style>
