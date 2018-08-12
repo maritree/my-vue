@@ -6,6 +6,10 @@ import TwoParts from "@/components/layout/TwoParts";
 import Chart1 from "@/components/chart/Chart1";
 import Form from "@/components/chart/Form";
 import UserManage from "@/components/user/UserManage";
+import UserEdit from "@/components/user/UserEdit";
+import Figure from "@/components/user/Figure";
+import Login from "@/components/Login/Login";
+import Layout from "@/components/layout/Layout";
 
 Vue.use(Router);
 // 使用了vue-routerd的[Lazy Loading Routes](https://router.vuejs.org/en/advanced/lazy-loading.html)
@@ -13,25 +17,35 @@ Vue.use(Router);
 // 所有权限通用路由表
 // 如首页和登录页和一些不用权限的公用页面
 export const constantRouterMap = [
-  { path: "/main", component: UserManage, name: "UserManage" },
-  { path: "/user", component: UserManage, name: "user" },
-  { path: "/role", component: Main, name: "role" },
+  { path: "/Login", component: Login, name: "Login" },
   {
-    path: "/TwoParts",
-    component: TwoParts,
+    path: "",
+    component: Layout,
     name: "首页",
     children: [
+      { path: "/userEdit", component: UserEdit, name: "UserEdit" },
+      { path: "/user", component: UserManage, name: "user" },
+      { path: "/role", component: Main, name: "role" },
       {
-        path: "/chart",
-        component: Chart1,
-        name: "Chart1",
-        meta: { title: "dashboard", icon: "dashboard", noCache: true }
-      },     {
-        path: "/form",
-        component: Form,
-        name: "Form",
-        meta: { title: "dashboard", icon: "dashboard", noCache: true }
-      }
+        path: "/TwoParts",
+        component: TwoParts,
+        name: "首页",
+        children: [
+          {
+            path: "/chart",
+            component: Chart1,
+            name: "Chart1",
+            meta: { title: "dashboard", icon: "dashboard", noCache: true }
+          },
+          {
+            path: "/form",
+            component: Form,
+            name: "Form",
+            meta: { title: "dashboard", icon: "dashboard", noCache: true }
+          }
+        ]
+      },
+      { path: "/figure", component: Figure, name: "figure" }
     ]
   }
 ];

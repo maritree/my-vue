@@ -1,51 +1,75 @@
 <template>
-    <el-table
-            :data="tableData"
-            max-height="800"
-            border
-            style="width: 100% "
-            fit>
-        <el-table-column
-                prop="date"
-                label="日期"
-                align="center"
-                resizable="false">
-        </el-table-column>
-        <el-table-column
-                prop="name"
-                label="姓名"
-                align="center"
-        >
-        </el-table-column>
-        <el-table-column
-                prop="address"
-                label="地址"
-                align="center">
-        </el-table-column>
-    </el-table>
+    <el-row>
+        <el-col :span="2">
+            <Tree>
+
+            </Tree>
+        </el-col>
+        <el-col :span="22">
+            <el-table
+                    :data="tableData"
+                    border
+                    style="width: 100%"
+                    height="90vh"
+                    fit
+                    v-loading="loding"
+                    element-loading-text="拼命加载中"
+                    element-loading-spinner="el-icon-loading"
+                    element-loading-background="rgba(255, 255, 255, 1)">
+                <el-table-column
+                        prop="neckName"
+                        label="昵称"
+                        align="center"
+                        resizable>
+                </el-table-column>
+                <el-table-column
+                        prop="password"
+                        label="密码"
+                        align="center"
+                >
+                </el-table-column>
+                <el-table-column
+                        prop="userName"
+                        label="姓名"
+                        align="center">
+                </el-table-column>
+            </el-table>
+        </el-col>
+
+    </el-row>
+
+
 </template>
 
 
 <script>
-import { getRequest } from "@/util/requests.js";
-// import {Message} from "element-ui";
+    import {getRequest} from "@/util/requests.js";
+    import Tree from "../common/Tree";
+    // import { Message } from "element-ui";
 
-export default {
-  name: "UserManage",
-  created() {
-    getRequest("/mock/user")
-      .then(response => {
-        this.tableData = response.data;
-      })
-      // eslint-disable-next-line no-console
-      .catch(reason => console.info(reason));
-  },
-  data() {
-    return {
-      tableData: []
+    export default {
+        name: "UserManage",
+        components: {Tree},
+        beforeCreate() {
+            getRequest(this.BASE_URL + "/user/list")
+                .then(response => {
+                    // eslint-disable-next-line no-console
+                    console.info(response.data), (this.tableData = response.data.data);
+                })
+                // eslint-disable-next-line no-console
+                .catch(reason => console.info(reason))
+        },
+        beforeUpdate() {
+            this.loding = false;
+        },
+
+        data() {
+            return {
+                loding: true,
+                tableData: []
+            };
+        }
     };
-  }
-};
 </script>
 
 <style scoped>

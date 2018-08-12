@@ -2,8 +2,8 @@ import Mock from "mockjs";
 
 // 配置拦截 ajax 的请求时的行为，支持的配置项目有 timeout。
 Mock.setup({
-  timeout: "200 - 400"
-});
+    timeout: '350-600'
+})
 
 var baseUrlx = "/mock";
 
@@ -21,145 +21,48 @@ var baseUrlx = "/mock";
 //     }
 //   ]
 // });
-Mock.mock(baseUrlx+"/user", [
-  {
-    date: "2016-05-02",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1518 弄"
-  },
-  {
-    date: "2016-05-04",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1517 弄"
-  },
-  {
-    date: "2016-05-01",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1519 弄"
-  },
-  {
-    date: "2016-05-03",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1516 弄"
-  },
-  {
-    date: "2016-05-04",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1517 弄"
-  },
-  {
-    date: "2016-05-01",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1519 弄"
-  },
-  {
-    date: "2016-05-03",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1516 弄"
-  },
-  {
-    date: "2016-05-04",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1517 弄"
-  },
-  {
-    date: "2016-05-01",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1519 弄"
-  },
-  {
-    date: "2016-05-03",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1516 弄"
-  },
-  {
-    date: "2016-05-04",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1517 弄"
-  },
-  {
-    date: "2016-05-01",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1519 弄"
-  },
-  {
-    date: "2016-05-03",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1516 弄"
-  },
-  {
-    date: "2016-05-04",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1517 弄"
-  },
-  {
-    date: "2016-05-01",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1519 弄"
-  },
-  {
-    date: "2016-05-03",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1516 弄"
-  },
-  {
-    date: "2016-05-04",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1517 弄"
-  },
-  {
-    date: "2016-05-01",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1519 弄"
-  },
-  {
-    date: "2016-05-03",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1516 弄"
-  },
-  {
-    date: "2016-05-04",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1517 弄"
-  },
-  {
-    date: "2016-05-01",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1519 弄"
-  },
-  {
-    date: "2016-05-03",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1516 弄"
-  },
-  {
-    date: "2016-05-04",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1517 弄"
-  },
-  {
-    date: "2016-05-01",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1519 弄"
-  },
-  {
-    date: "2016-05-03",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1516 弄"
-  },
-  {
-    date: "2016-05-04",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1517 弄"
-  },
-  {
-    date: "2016-05-01",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1519 弄"
-  },
-  {
-    date: "2016-05-03",
-    name: "王小虎",
-    address: "上海市普陀区金沙江路 1516 弄"
-  }
-]);
+Mock.mock(baseUrlx + "/user/list", {
+    data: [
+        {
+            neckName: "2016-05-01",
+            password: 31231,
+            userName: "上海市普陀区金沙江路 1519 弄"
+        },
+        {
+            neckName: "2016-05-01",
+            password: 43114231432,
+            userName: "上海市普陀区金沙江路 1519 弄"
+        },
+        {
+            neckName: "2016-05-01",
+            password: 4114231423,
+            userName: "上海市普陀区金沙江路 1519 弄"
+        }
+    ]
+});
+
+Mock.mock(baseUrlx + "/Login", {
+    data: [
+        {
+            neckName: "2016-05-01",
+            password: 123112,
+            userName: "上海市普陀区金沙江路 1519 弄"
+        },
+        {
+            neckName: "2016-05-01",
+            password: "王小虎",
+            userName: "上海市普陀区金沙江路 1519 弄"
+        },
+        {
+            neckName: "2016-05-01",
+            password: "王小虎",
+            userName: "上海市普陀区金沙江路 1519 弄"
+        }
+    ]
+});
+
+Mock.mock(baseUrlx + "/login", {
+    "code": 200,
+    "data": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ4aWFvbWluZyIsImlzcyI6ImVjaGlzYW4iLCJleHAiOjE1MzQwNDU4ODUsImlhdCI6MTUzNDA0MjI4NSwicm9sIjpbIjEiLCIyIl19.btrcjktTrBIUoZes59-XtIBgjopsnTvpzDDq491y2Vf3BwX4piurdhbMDWCo7WnHSelFKAZHSD9ROBjny3iBAA",
+    "message": "SUCCESS"
+});

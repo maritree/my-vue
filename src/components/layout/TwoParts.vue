@@ -1,22 +1,27 @@
 <template>
-    <el-row style="height: 100px">
-        <el-col :span="12">
-            <div class="grid-content bg-purple">
-                <router-view></router-view>
-            </div>
-        </el-col>
-        <el-col :span="12">
-            <el-row >
-                <el-col :span="24" style="height: 100px">
-                    <div class="grid-content bg-purple-dark"></div>
-                </el-col>
-            </el-row>
-            <el-row>
-                <el-button @click="handleClick">组件切换按钮</el-button>
-                <component v-bind:is="currentTabComponent"></component>
-            </el-row>
-        </el-col>
-    </el-row>
+    <div>
+        <el-row >
+            <el-col :span=12>
+                <div class="grid-content bg-purple">
+                    <router-view></router-view>
+                </div>
+            </el-col>
+            <el-col :span=12>
+                <el-row>
+                    <el-col :span=24 style="height: 100px">
+                        <div class="grid-content bg-purple-dark"></div>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-button @click="handleClick">组件切换按钮</el-button>
+                    <component v-bind:is="currentTabComponent"></component>
+                </el-row>
+            </el-col>
+        </el-row>
+        <div>
+            填补空白
+        </div>
+    </div>
 </template>
 
 <script>
@@ -27,8 +32,8 @@ export default {
   name: "TwoParts",
   data() {
     return {
-        tag: 1,
-        currentTabComponent: Chart1
+      tag: 1,
+      currentTabComponent: Chart1
     };
   },
   methods: {
