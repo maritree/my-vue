@@ -36,30 +36,28 @@
 </template>
 
 <script>
-    // import { Message } from "element-ui";
+// import { Message } from "element-ui";
 
-    import UserHover from "../user/UserHover";
+import UserHover from "../user/UserHover";
 
-    export default {
-        name: "Aside",
-        components: {UserHover},
-        data() {
-            return {
-                openeds: ["/Main"]
-            };
-        },
-        methods: {
-            handleOpen() {
-                // Message.info("打开");
-            },
-            handleClose() {
-                // Message.info("关闭");
-            }
-        }
+export default {
+  name: "Aside",
+  components: { UserHover },
+  data() {
+    return {
+      openeds: ["/Main"]
     };
+  },
+  methods: {
+    handleOpen() {
+      // Message.info("打开");
+    },
+    handleClose() {
+      // Message.info("关闭");
+    }
+  }
+};
 </script>
 
 <style scoped>
-
-
 </style>

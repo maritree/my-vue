@@ -14,25 +14,25 @@
 
 </template>
 <script>
-    import {getToken} from "@/api/login";
-    // import {postRequest} from "../../util/requests";
+import { getToken } from "@/api/login";
+// import {postRequest} from "../../util/requests";
 
-    export default {
-        name: "Login",
-        data() {
-            return {
-                formInline: {
-                    userName: "",
-                    password: ""
-                }
-            };
-        },
-        methods: {
-            onSubmit() {
-                getToken(this.formInline);
-            }
-        }
+export default {
+  name: "Login",
+  data() {
+    return {
+      formInline: {
+        userName: "",
+        password: ""
+      }
     };
+  },
+  methods: {
+    onSubmit() {
+      getToken(this.formInline);
+    }
+  }
+};
 </script>
 <style scoped>
 </style>

@@ -49,29 +49,29 @@
 
 
 <script>
-    export default {
-        name: "Form",
-        data() {
-            return {
-                form: {
-                    name: "",
-                    region: "",
-                    date1: "",
-                    ElColElColdate2: "",
-                    delivery: false,
-                    type: [],
-                    resource: "",
-                    desc: ""
-                }
-            };
-        },
-        methods: {
-            onSubmit() {
-// eslint-disable-next-line no-console
-                console.log("submit!");
-            }
-        }
+export default {
+  name: "Form",
+  data() {
+    return {
+      form: {
+        name: "",
+        region: "",
+        date1: "",
+        ElColElColdate2: "",
+        delivery: false,
+        type: [],
+        resource: "",
+        desc: ""
+      }
     };
+  },
+  methods: {
+    onSubmit() {
+      // eslint-disable-next-line no-console
+      console.log("submit!");
+    }
+  }
+};
 </script>
 
 

@@ -4,8 +4,8 @@
             <span slot="label"><i class="el-icon-date"></i> 我的行程</span>
             我的行程
         </el-tab-pane>
-        <el-tab-pane label="消息中心" >
-            <TwoParts ></TwoParts>
+        <el-tab-pane label="消息中心">
+            <TwoParts></TwoParts>
         </el-tab-pane>
         <el-tab-pane label="角色管理">
             <Chart1></Chart1>

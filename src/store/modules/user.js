@@ -5,7 +5,7 @@ const user = {
     user: "hhsahshaiu",
     status: "",
     code: "",
-    token: "",
+    token: '',
     name: "",
     avatar: "",
     introduction: "",

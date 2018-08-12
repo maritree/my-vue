@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-row >
+        <el-row>
             <el-col :span=12>
                 <div class="grid-content bg-purple">
                     <router-view></router-view>
