@@ -19,7 +19,7 @@
                     <el-menu-item index="/TwoParts">TwoParts</el-menu-item>
                 </el-menu-item-group>
                 <el-menu-item-group title="分组3">
-                    <el-menu-item index="/chart">chart</el-menu-item>
+                    <el-menu-item index="/chart1">chart</el-menu-item>
                 </el-menu-item-group>
                 <el-submenu index="1-4">
                     <template slot="title">选项4</template>
@@ -29,7 +29,11 @@
 
             <el-menu-item index="/Figure">
                 <i class="el-icon-menu"></i>
-                <span slot="title">导航二</span>
+                <span slot="title">Figure</span>
+            </el-menu-item>
+            <el-menu-item index="/Chart">
+                <i class="el-icon-menu"></i>
+                <span slot="title">Chart</span>
             </el-menu-item>
         </el-menu>
     </div>
