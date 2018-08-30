@@ -5,13 +5,9 @@
 </template>
 
 <script>
-import Layout from "./components/layout/Layout";
 
 export default {
   name: "app",
-  components: {
-    Layout
-  }
 };
 </script>
 
