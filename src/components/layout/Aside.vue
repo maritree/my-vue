@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <UserHover></UserHover>
         <el-menu :default-openeds='openeds' class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
                  router style="border-right: 0px">
@@ -26,12 +25,11 @@
                     <el-menu-item index="form">form</el-menu-item>
                 </el-submenu>
             </el-submenu>
-
             <el-menu-item index="/Figure">
                 <i class="el-icon-menu"></i>
                 <span slot="title">Figure</span>
             </el-menu-item>
-            <el-menu-item index="/Chart">
+            <el-menu-item index="/Chart" @click="handleOpen">
                 <i class="el-icon-menu"></i>
                 <span slot="title">Chart</span>
             </el-menu-item>
@@ -40,7 +38,7 @@
 </template>
 
 <script>
-// import { Message } from "element-ui";
+import { Message } from "element-ui";
 
 import UserHover from "../user/UserHover";
 
@@ -54,10 +52,10 @@ export default {
   },
   methods: {
     handleOpen() {
-      // Message.info("打开");
+       Message.info("打开");
     },
     handleClose() {
-      // Message.info("关闭");
+       Message.info("关闭");
     }
   }
 };

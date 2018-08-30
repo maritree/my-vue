@@ -31,7 +31,7 @@ export const constantRouterMap = [
       {
         path: "/TwoParts",
         component: TwoParts,
-        name: "首页",
+        name: "TwoParts",
         children: [
           {
             path: "/Chart1",

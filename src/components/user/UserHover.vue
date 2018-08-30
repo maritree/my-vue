@@ -1,23 +1,25 @@
 <template>
     <el-popover placement="top-start" title="用户详情" trigger="hover" style="text-align: center"
                 transition="fade-in-linear">
-        <div style="width: 100%">
-            <div style="float: left ;width: 50%">
-                <h5>用户名:</h5>
-                <h5>部门:</h5>
-                <h5>用户名:</h5>
-            </div>
-            <div style="float: left ;width: 50%">
-                <h5>{{gridData[0]["date"]}}</h5>
-                <h5>{{gridData[0]["date"]}}</h5>
-                <h5>{{gridData[0]["date"]}}</h5>
-            </div>
+        <div style="width: 160px">
+            <el-row>
+                <el-col :span="10">
+                    <div style="float: left">
+                        <p style="text-align: right">用户名:</p>
+                        <p style="text-align: right">部门:</p>
+                        <p style="text-align: right">时间:</p>
+                    </div>
+                </el-col>
+                <el-col :span="14">
+                    <div style="float: right">
+                        <p>{{gridData[0]["date"]}}</p>
+                        <p>{{gridData[0]["date"]}}</p>
+                        <p>{{gridData[0]["date"]}}</p>
+                    </div>
+                </el-col>
+            </el-row>
         </div>
-        <div style="text-align: right; margin: 0">
-            <el-button size="mini" type="text" @click="visible2 = false">取消</el-button>
-            <el-button type="primary" size="mini" @click="visible2 = false">确定</el-button>
-        </div>
-
+        <Logout style="float: right"></Logout>
         <div slot="reference" class="cover">
             <img src="https://picsum.photos/200/200/?random">
         </div>
@@ -25,8 +27,13 @@
 </template>
 
 <script>
+// import { distory } from "@/api/logout";
+
+import Logout from "../Login/Logout";
+
 export default {
   name: "UserHover",
+  components: { Logout },
   data() {
     return {
       gridData: [
@@ -52,6 +59,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    // logout() {
+    //   distory();
+    // }
   }
 };
 </script>
